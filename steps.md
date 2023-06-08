@@ -21,12 +21,16 @@ Generiamoli e stampiamo in console per essere certi che siano corretti
 # MILESTONE 3
 Quando l'utente clicca su una cella, verrifichiamo se ha calpestato una bomba, controllando se il numero di cella è presente nell'array di bombe.
 Se si, la cella diventa rossa (raccogliamo il punteggio e scriviamo in console che la patita termina) altrimenti diventa azzurra e dobbiamo incrementare il punteggio.
+
 # MILESTONE 4
 Quando l'utente clicca su una cella, e questa non è una bomba, dobbiamo controllare se il punteggio incrementato ha raggiunto l punteggio massimo, perchè in quel caso la partita termina. Raccogliamo quindi il messaggio e scriviamo un messaggio appropriato.
+
 # MILESTONE 5
 Quando la partita termina dobbiamo capire se è terminata perchè è stata cliccata una bomba o seperchè l'utente ha raggiunto il punteggio massimo(ossia ha vinto). Dobbiamo poi in ogni caso stampare lin pagina il punteggio raggiunto ed il messaggio adeguato in caso di vittoria o sconfitta.
+
 # BONUS
 Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà (come le istruzioni di ieri se non già fatto)
+
 # SUPERBONUS
 Colorare tutte le celle bomba quando la partita finisce
 Consigli del giorno
@@ -47,6 +51,7 @@ Buon divertimento e a domani!  -->
     - **ALTRIMENTI**:
         - Aumentare il contatore `score` di 1.
         - Aggiungo il numero della cella cliccata all'array `clickedCells`.
+
 <br>
 
 ## MILESTONE #2
@@ -61,4 +66,13 @@ Buon divertimento e a domani!  -->
 - Creo la variabile `bombs` a cui sarà assegnato il risultato della funzione `createBombs` con dati i parametri 16 e `difficulty`.
 - Stampo `bombs` in console.
 
+<br>
+
+## MILESTONE #3
+- Preparo una classe CSS bomb che avrà sfondo rosso.
+- **AD OGNI CLICk** della cella:
+    - **SE** il numero della cella è presente nell'array `bombs`:
+        - Aggiungi la classe CSS bomb all'elemento cella.
+        - Stampa in console che la partita è terminata visualizzando `score`.
+    - ***ALTRIMENTI** assegna la classe CSS clicked ed incrementa il contatore score di 1.
 
