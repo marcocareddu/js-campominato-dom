@@ -23,7 +23,7 @@ Quando l'utente clicca su una cella, verrifichiamo se ha calpestato una bomba, c
 Se si, la cella diventa rossa (raccogliamo il punteggio e scriviamo in console che la patita termina) altrimenti diventa azzurra e dobbiamo incrementare il punteggio.
 
 # MILESTONE 4
-Quando l'utente clicca su una cella, e questa non è una bomba, dobbiamo controllare se il punteggio incrementato ha raggiunto l punteggio massimo, perchè in quel caso la partita termina. Raccogliamo quindi il messaggio e scriviamo un messaggio appropriato.
+Quando l'utente clicca su una cella, e questa non è una bomba, dobbiamo controllare se il punteggio incrementato ha raggiunto Il punteggio massimo, perché in quel caso la partita termina. Raccogliamo quindi il messaggio e scriviamo un messaggio appropriato.
 
 # MILESTONE 5
 Quando la partita termina dobbiamo capire se è terminata perchè è stata cliccata una bomba o seperchè l'utente ha raggiunto il punteggio massimo(ossia ha vinto). Dobbiamo poi in ogni caso stampare lin pagina il punteggio raggiunto ed il messaggio adeguato in caso di vittoria o sconfitta.
@@ -75,4 +75,13 @@ Buon divertimento e a domani!  -->
         - Aggiungi la classe CSS bomb all'elemento cella.
         - Stampa in console che la partita è terminata visualizzando `score`.
     - ***ALTRIMENTI** assegna la classe CSS clicked ed incrementa il contatore score di 1.
+
+<br>
+
+## MILESTONE 4
+- Creo una variabile `maxScore` che sarà il punteggio massimo raggiungibile.
+- **AD OGNI CLICk** della cella:
+    **SE** il contantore raggiunge `maxScore`:
+        - Stampare in console: **"Hai Vinto! il tuo punteggio è: " + `score`**.
+    **ALTRIMENTI** continua a giocare.
 
