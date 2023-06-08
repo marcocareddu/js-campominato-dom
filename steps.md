@@ -13,9 +13,11 @@ Al termine della partita, il software deve comunicare il punteggio, cioè il num
 Prepariamo "Qualcosa" per tenere il punteggio dell'utente.
 Quando l'utente clicca su una cella, incrementiamo il punteggio.
 Se riusciamo, facciamo anche in modo da non poter più cliccare sulla stessa cella
+
 # MILESTONE 2
 Facciamo in modo di generare 16 numeri casuali (tutti diversi) compresi tra 1 e il massimo di caselle disponibili.
 Generiamoli e stampiamo in console per essere certi che siano corretti
+
 # MILESTONE 3
 Quando l'utente clicca su una cella, verrifichiamo se ha calpestato una bomba, controllando se il numero di cella è presente nell'array di bombe.
 Se si, la cella diventa rossa (raccogliamo il punteggio e scriviamo in console che la patita termina) altrimenti diventa azzurra e dobbiamo incrementare il punteggio.
@@ -48,10 +50,15 @@ Buon divertimento e a domani!  -->
 <br>
 
 ## MILESTONE #2
-- **Creo la funzione** `createBombs` con parametro "numeri" che *ritorna* un array contenente "numeri" diversi generati random, che in questo caso saranno le bombe:
+- **Creo la funzione** `createBombs` con parametri "numeri" e "numeriMax" che *ritorna* un array contenente "numeri" diversi generati random, che in questo caso saranno le bombe:
     - Creo un'array `randomNumbers` vuoto.
-    - **CICLO FOR** tante volte quante indica "numeri" e per ogni ciclo:
+    - **CICLO WHILE** tante volte quante indica "numeri" e per ogni ciclo:
         - **CICLO DO-WHILE**:
-            - **DO** genero ed inserisco il numero generato in `randomNumbers`.
-            - **FINO A CHE** `randomNumbers` contiene il numero creato
-    - Restituisco l'array
+            - **DO** genero un numero random da 1 a "numeriMax".
+                - **FINO A CHE** `randomNumbers` contiene il numero creato.
+            - Aggiungo il numero random e lo inserisco in `randomNumbers`
+    - Restituisco l'array.
+- Creo la variabile `bombs` a cui sarà assegnato il risultato della funzione `createBombs` con dati i parametri 16 e `difficulty`.
+- Stampo `bombs` in console.
+
+
