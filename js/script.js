@@ -19,11 +19,17 @@ function createCell(numero) {
 const grid = document.querySelector('.grid');
 const selectElement = document.getElementById('difficulty');
 const button = document.querySelector('button');
+const scoreElement = document.getElementById('score-element');
+
 
 
 // * PHASE 2
 // Button click - Create Variables 
 button.addEventListener('click', function () {
+
+    // Create score var and array
+    let score = '';
+    const clickedCells = [];
 
     grid.innerHTML = '';
 
