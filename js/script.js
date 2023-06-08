@@ -57,13 +57,25 @@ button.addEventListener('click', function () {
 
             currentCell.addEventListener('click', function () {
 
-                selectedCell = currentCell.dataset.cell;
+                if (clickedCells.includes(currentCell.dataset.cell)) {
+                    console.log('Cella già cliccata!');
 
-                // Add class selected on cell
-                currentCell.classList.toggle('active');
+                } else {
+                    // Score counter
+                    scoreElement.innerText = ++score;
 
-                // Print selected cell number on console 
-                console.log(selectedCell);
+                    selectedCell = currentCell.dataset.cell;
+
+                    // Add class selected on cell
+                    currentCell.classList.add('active');
+
+                    // Print selected cell number on console 
+                    console.log(selectedCell);
+
+                    // Add cell to array
+                    clickedCells.push(selectedCell);
+                }
+
             }
             )
         }
