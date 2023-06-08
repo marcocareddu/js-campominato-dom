@@ -38,7 +38,7 @@ const scoreElement = document.getElementById('score-element');
 
 
 // * PHASE 2
-// Button click - Create Variables 
+// Button play click - Create Variables 
 button.addEventListener('click', function () {
 
     // Create score var and array
@@ -49,10 +49,11 @@ button.addEventListener('click', function () {
 
     const difficulty = parseInt(selectElement.value);
     let selectedCell = '';
-    console.log(difficulty);
+    console.log('Il valore di difficulty è: ' + difficulty);
 
     // Create bombs variable
     let bombs = createBombs(16, difficulty);
+
 
     // ! Validation ********
     if (difficulty !== 100 && difficulty !== 81 && difficulty !== 49) {
