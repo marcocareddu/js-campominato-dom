@@ -25,6 +25,7 @@ function createBombs(number, maxNumber) {
     }
     return generatedNumbers;
 }
+
 //? *********************************************************
 
 
@@ -44,8 +45,13 @@ button.addEventListener('click', function () {
     let score = '';
     const clickedCells = [];
     grid.innerHTML = '';
-
+    const maxBomb = 16;
     const difficulty = parseInt(selectElement.value);
+
+    // Define max Score
+    const maxScore = difficulty - maxBomb;
+    console.log(maxScore, maxBomb);
+
     let selectedCell = '';
     console.log('Il valore di difficulty è: ' + difficulty);
 
@@ -73,12 +79,32 @@ button.addEventListener('click', function () {
             const currentCell = cells[i];
 
             // Search if clickedCells is bomb
+
+
+
             const isBomb = bombs.includes(parseInt(currentCell.dataset.cell));
             currentCell.addEventListener('click', function () {
 
+                const totalCell = document.querySelectorAll(`.cell`);
+                console.log('totalcell =' + totalCell.length);
+
+                selectedCell = currentCell.dataset.cell;
+
                 // Bomb control
-                if (isBomb) {
+                if ((isBomb) || (score === maxScore)) {
                     currentCell.classList.add('bomb');
+
+
+                    // Add active class to all
+                    for (let i = 0; i < totalCell.length; i++) {
+                        const singleCell = totalCell[i];
+                        singleCell.classList.add('active');
+                        const singleCellNumber = parseInt(singleCell.dataset.cell)
+                        if (bombs.includes(singleCellNumber)) {
+                            singleCell.classList.add('bomb');
+                        }
+                    }
+
                     console.log('Hai Perso! il tuo punteggio è: ' + score);
 
                 } else {
@@ -89,7 +115,6 @@ button.addEventListener('click', function () {
                         // Score counter
                         scoreElement.innerText = ++score;
 
-                        selectedCell = currentCell.dataset.cell;
 
                         // Add class selected on cell
                         currentCell.classList.add('active');
