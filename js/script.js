@@ -44,6 +44,7 @@ button.addEventListener('click', function () {
     // Create score var and array
     let score = '';
     const clickedCells = [];
+    console.log(clickedCells);
     grid.innerHTML = '';
 
     const difficulty = parseInt(selectElement.value);
@@ -74,6 +75,7 @@ button.addEventListener('click', function () {
             const currentCell = cells[i];
 
             currentCell.addEventListener('click', function () {
+
 
                 if (clickedCells.includes(currentCell.dataset.cell)) {
                     console.log('Cella già cliccata!');
