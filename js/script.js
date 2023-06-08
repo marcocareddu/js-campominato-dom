@@ -15,15 +15,16 @@ function createCell(numero) {
 // Functions for createBombs
 function createBombs(number, maxNumber) {
     let generatedNumbers = [];
-    while (generatedNumbers.lenght < number) {
+
+    while (generatedNumbers.length < number) {
+        let randomNumber;
         do {
             randomNumber = Math.floor(Math.random() * maxNumber) + 1;
-        } while (generatedNumbers.includes(randomNumber)) {
-            generatedNumbers.push(randomNumber);
-        }
+        } while (generatedNumbers.includes(randomNumber));
+        generatedNumbers.push(randomNumber);
     }
+    return generatedNumbers;
 }
-
 //? *********************************************************
 
 
@@ -49,6 +50,9 @@ button.addEventListener('click', function () {
     const difficulty = parseInt(selectElement.value);
     let selectedCell = '';
     console.log(difficulty);
+
+    // Create bombs variable
+    let bombs = createBombs(16, difficulty);
 
     // ! Validation ********
     if (difficulty !== 100 && difficulty !== 81 && difficulty !== 49) {
