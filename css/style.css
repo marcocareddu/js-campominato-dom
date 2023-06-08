@@ -71,6 +71,11 @@ main {
     background-color: #3fa3d8;
 }
 
+.bomb {
+    background-color: red;
+}
+
+
 /* ERROR MESSAGE */
 
 .img-error {
