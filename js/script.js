@@ -34,7 +34,6 @@ const grid = document.querySelector('.grid');
 const selectElement = document.getElementById('difficulty');
 const button = document.querySelector('button');
 const scoreElement = document.getElementById('score-element');
-let bombs = [];
 
 
 // * PHASE 2
@@ -44,7 +43,6 @@ button.addEventListener('click', function () {
     // Create score var and array
     let score = '';
     const clickedCells = [];
-    console.log(clickedCells);
     grid.innerHTML = '';
 
     const difficulty = parseInt(selectElement.value);
@@ -52,7 +50,7 @@ button.addEventListener('click', function () {
     console.log('Il valore di difficulty è: ' + difficulty);
 
     // Create bombs variable
-    bombs = createBombs(16, difficulty);
+    const bombs = createBombs(16, difficulty);
     console.log('Il valore di bombs è: ' + bombs);
 
 
@@ -74,29 +72,37 @@ button.addEventListener('click', function () {
 
             const currentCell = cells[i];
 
+            // Search if clickedCells is bomb
+            const isBomb = bombs.includes(parseInt(currentCell.dataset.cell));
             currentCell.addEventListener('click', function () {
 
-
-                if (clickedCells.includes(currentCell.dataset.cell)) {
-                    console.log('Cella già cliccata!');
+                // Bomb control
+                if (isBomb) {
+                    currentCell.classList.add('bomb');
+                    console.log('Hai Perso! il tuo punteggio è: ' + score);
 
                 } else {
-                    // Score counter
-                    scoreElement.innerText = ++score;
+                    if (clickedCells.includes(currentCell.dataset.cell)) {
+                        console.log('Cella già cliccata!');
 
-                    selectedCell = currentCell.dataset.cell;
+                    } else {
+                        // Score counter
+                        scoreElement.innerText = ++score;
 
-                    // Add class selected on cell
-                    currentCell.classList.add('active');
+                        selectedCell = currentCell.dataset.cell;
 
-                    // Print selected cell number on console 
-                    console.log(selectedCell);
+                        // Add class selected on cell
+                        currentCell.classList.add('active');
 
-                    // Add cell to array
-                    clickedCells.push(selectedCell);
+                        // Print selected cell number on console 
+                        console.log(selectedCell);
+
+                        // Add cell to array
+                        clickedCells.push(selectedCell);
+                        console.log('Il valore di clickedCells è: ' + clickedCells);
+                    }
                 }
-            }
-            )
+            })
         }
     }
 })
