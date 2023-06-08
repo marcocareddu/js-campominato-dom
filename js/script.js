@@ -11,6 +11,19 @@ function createCell(numero) {
     }
     return element;
 }
+
+// Functions for createBombs
+function createBombs(number, maxNumber) {
+    let generatedNumbers = [];
+    while (generatedNumbers.lenght < number) {
+        do {
+            randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+        } while (generatedNumbers.includes(randomNumber)) {
+            generatedNumbers.push(randomNumber);
+        }
+    }
+}
+
 //? *********************************************************
 
 
