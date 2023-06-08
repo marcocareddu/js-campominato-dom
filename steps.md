@@ -4,10 +4,11 @@ repo: js-campominato-dom
 Copiamo la griglia fatta ieri nella nuova repo e aggiungiamo la logica di gioco.
 ATTENZIONE: non bisogna copiare tutta la cartella dell'esercizio ma solo l'index.html e le cartelle js/css/ con i relativi script e fogli di stile, per evitare problemi con l'inizializzazione di git.
 DESCRIZIONE DEL GIOCO
-Il computer deve generare 16 numeri casuali nello stesso range della difficltà prescelta: le bombe. Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell'array delle bombe non potranno esserci due numeri uguali
+Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell'array delle bombe non potranno esserci due numeri uguali
 In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati abbiamo calpestato una bomba. La cella si colora di rosso e la partita termina. Altrimenti, la cella cliccata si colora di azzurro e l'utente può continuare  a cliccare sulle altre celle.
-LA partita termina quando il giocatore clicca su una bomba o quando raggiunger il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
+La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
 Al termine della partita, il software deve comunicare il punteggio, cioè il numero di volte che l'utente ha cliccato su una cella che non era una bomba
+
 # MILESTONE 1
 Prepariamo "Qualcosa" per tenere il punteggio dell'utente.
 Quando l'utente clicca su una cella, incrementiamo il punteggio.
@@ -31,3 +32,26 @@ approcciate l'esercizio con serenità, e cercate di divertirvi!
 Cercate di commentare e usare i console.log il più possibile
 Fatevi sempre delle domande: sto ripetendo del codice? Questa funzione fa troppe cose? Il nome ha senso rispetto a quello che fa?
 Buon divertimento e a domani!  -->
+
+# Campominato - logica di gioco
+## MILESTONE #1
+- Aggiungere nel DOM un elemento in cui verrà visualizzato il punteggio.
+- Collegare l'elemento del DOM in JS.
+- Creare un contatore `score` che terrà traccia del punteggio
+- Creo un array `clickedCells` che conterrà le celle cliccate.
+- **AD OGNI CLICk** della cella:
+    - **SE** `clickedCells` contiene la cella cliccata:
+        - Stampa in console: *"Cella già cliccata"*
+    - **ALTRIMENTI**:
+        - Aumentare il contatore `score` di 1.
+        - Aggiungo il numero della cella cliccata all'array `clickedCells`.
+<br>
+
+## MILESTONE #2
+- **Creo la funzione** `createBombs` con parametro "numeri" che *ritorna* un array contenente "numeri" diversi generati random, che in questo caso saranno le bombe:
+    - Creo un'array `randomNumbers` vuoto.
+    - **CICLO FOR** tante volte quante indica "numeri" e per ogni ciclo:
+        - **CICLO DO-WHILE**:
+            - **DO** genero ed inserisco il numero generato in `randomNumbers`.
+            - **FINO A CHE** `randomNumbers` contiene il numero creato
+    - Restituisco l'array
