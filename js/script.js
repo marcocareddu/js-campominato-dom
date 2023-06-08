@@ -34,7 +34,7 @@ const grid = document.querySelector('.grid');
 const selectElement = document.getElementById('difficulty');
 const button = document.querySelector('button');
 const scoreElement = document.getElementById('score-element');
-
+let bombs = [];
 
 
 // * PHASE 2
@@ -44,7 +44,6 @@ button.addEventListener('click', function () {
     // Create score var and array
     let score = '';
     const clickedCells = [];
-
     grid.innerHTML = '';
 
     const difficulty = parseInt(selectElement.value);
@@ -52,7 +51,8 @@ button.addEventListener('click', function () {
     console.log('Il valore di difficulty è: ' + difficulty);
 
     // Create bombs variable
-    let bombs = createBombs(16, difficulty);
+    bombs = createBombs(16, difficulty);
+    console.log('Il valore di bombs è: ' + bombs);
 
 
     // ! Validation ********
@@ -93,11 +93,8 @@ button.addEventListener('click', function () {
                     // Add cell to array
                     clickedCells.push(selectedCell);
                 }
-
             }
             )
         }
-
-
     }
 })
