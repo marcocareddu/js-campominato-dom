@@ -78,7 +78,7 @@ Buon divertimento e a domani!  -->
 
 <br>
 
-## MILESTONE 4
+## MILESTONE #4
 - Creo una variabile `maxScore` che sarà il punteggio massimo raggiungibile.
 - **AD OGNI CLICk** della cella:
     **SE** il contantore raggiunge `maxScore`:
@@ -87,6 +87,6 @@ Buon divertimento e a domani!  -->
 
 <br>
 
-## MILESTONE 5
+## MILESTONE #5
 - Si ricollega a **MILESTONE 4**, aggiungere alla verifica:
 - **ALTRIMENTI SE**: **MILESTONE 3**
