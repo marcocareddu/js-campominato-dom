@@ -26,7 +26,7 @@ Se si, la cella diventa rossa (raccogliamo il punteggio e scriviamo in console c
 Quando l'utente clicca su una cella, e questa non è una bomba, dobbiamo controllare se il punteggio incrementato ha raggiunto Il punteggio massimo, perché in quel caso la partita termina. Raccogliamo quindi il messaggio e scriviamo un messaggio appropriato.
 
 # MILESTONE 5
-Quando la partita termina dobbiamo capire se è terminata perchè è stata cliccata una bomba o seperchè l'utente ha raggiunto il punteggio massimo(ossia ha vinto). Dobbiamo poi in ogni caso stampare lin pagina il punteggio raggiunto ed il messaggio adeguato in caso di vittoria o sconfitta.
+Quando la partita termina dobbiamo capire se è terminata perché è stata cliccata una bomba o se perché l'utente ha raggiunto il punteggio massimo (ossia ha vinto). Dobbiamo poi in ogni caso stampare in pagina il punteggio raggiunto ed il messaggio adeguato in caso di vittoria o sconfitta.
 
 # BONUS
 Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà (come le istruzioni di ieri se non già fatto)
@@ -85,3 +85,8 @@ Buon divertimento e a domani!  -->
         - Stampare in console: **"Hai Vinto! il tuo punteggio è: " + `score`**.
     **ALTRIMENTI** continua a giocare.
 
+<br>
+
+## MILESTONE 5
+- Si ricollega a **MILESTONE 4**, aggiungere alla verifica:
+- **ALTRIMENTI SE**: **MILESTONE 3**
