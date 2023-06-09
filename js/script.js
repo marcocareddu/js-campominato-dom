@@ -95,7 +95,7 @@ button.addEventListener('click', function () {
                     currentCell.classList.add('bomb');
 
 
-                    // Add active class to all
+                    // Add active class to all cells
                     for (let i = 0; i < totalCell.length; i++) {
                         const singleCell = totalCell[i];
                         singleCell.classList.add('active');
@@ -103,6 +103,9 @@ button.addEventListener('click', function () {
                         if (bombs.includes(singleCellNumber)) {
                             singleCell.classList.add('bomb');
                         }
+
+                        // Push all cells into clicked Cells 
+                        clickedCells.push(singleCell.dataset.cell);
                     }
 
                     console.log('Hai Perso! il tuo punteggio è: ' + score);
